@@ -1,16 +1,34 @@
-from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_community.tools.tavily_search import (
+    TavilySearchResults,
+)
 from langgraph.prebuilt import ToolNode
 
-def get_tools():
-    """
-    Return the list of tools to be used in the chatbot
-    """
-    tools=[TavilySearchResults(max_results=2)]
-    return tools
 
-def create_tool_node(tools):
+def get_tools() -> list:
     """
-    creates and returns a tool node for the graph
+    Return all tools used
+    in the LangGraph workflow.
     """
-    return ToolNode(tools=tools)
 
+    return [
+        TavilySearchResults(
+            max_results=2,
+        )
+    ]
+
+
+def create_tool_node(
+    tools: list,
+) -> ToolNode:
+    """
+    Create LangGraph ToolNode.
+    """
+
+    if not tools:
+        raise ValueError(
+            "Tools list cannot be empty."
+        )
+
+    return ToolNode(
+        tools=tools
+    )

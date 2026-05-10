@@ -1,36 +1,79 @@
-from src.langgraphagenticai.state.state import State
+from src.langgraphagenticai.state.state import (
+    State,
+)
+
 
 class ChatbotWithToolNode:
     """
-    Chatbot logic enhanced with tool integration.
+    Chatbot node with LangChain tool integration.
     """
-    def __init__(self,model):
+
+    def __init__(self, model) -> None:
         self.llm = model
 
-    def process(self, state: State) -> dict:
+    def process(
+        self,
+        state: State,
+    ) -> dict:
         """
-        Processes the input state and generates a response with tool integration.
+        Process messages and generate
+        chatbot response.
         """
-        user_input = state["messages"][-1] if state["messages"] else ""
-        llm_response = self.llm.invoke([{"role": "user", "content": user_input}])
 
-        # Simulate tool-specific logic
-        tools_response = f"Tool integration for: '{user_input}'"
+        messages = state.get(
+            "messages",
+            [],
+        )
 
-        return {"messages": [llm_response, tools_response]}
-    
+        if not messages:
+            raise ValueError(
+                "No messages found in state."
+            )
 
-    def create_chatbot(self, tools):
+        response = self.llm.invoke(
+            messages
+        )
+
+        return {
+            "messages": [response]
+        }
+
+    def create_chatbot(
+        self,
+        tools,
+    ):
         """
-        Returns a chatbot node function.
+        Create chatbot node with tools bound to LLM.
         """
-        llm_with_tools = self.llm.bind_tools(tools)
 
-        def chatbot_node(state: State):
+        llm_with_tools = (
+            self.llm.bind_tools(tools)
+        )
+
+        def chatbot_node(
+            state: State,
+        ) -> dict:
             """
-            Chatbot logic for processing the input state and returning a response.
+            Execute chatbot workflow
+            with tool support.
             """
-            return {"messages": [llm_with_tools.invoke(state["messages"])]}
+
+            messages = state.get(
+                "messages",
+                [],
+            )
+
+            if not messages:
+                raise ValueError(
+                    "No messages found in state."
+                )
+
+            response = llm_with_tools.invoke(
+                messages
+            )
+
+            return {
+                "messages": [response]
+            }
 
         return chatbot_node
-

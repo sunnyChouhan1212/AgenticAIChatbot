@@ -1,15 +1,40 @@
-from src.langgraphagenticai.state.state import State
+from src.langgraphagenticai.state.state import (
+    State,
+)
+
 
 class BasicChatbotNode:
     """
-    Basic Chatbot login implementation
+    Basic chatbot node for handling
+    conversational responses.
     """
-    def __init__(self,model):
-        self.llm=model
 
-    def process(self,state:State)->dict:
-        """
-        Processes the input state and generates a chatbot response.
-        """
-        return {"messages":self.llm.invoke(state['messages'])}
+    def __init__(self, model) -> None:
+        self.llm = model
 
+    def process(
+        self,
+        state: State,
+    ) -> dict:
+        """
+        Process incoming messages
+        and generate AI response.
+        """
+
+        messages = state.get(
+            "messages",
+            [],
+        )
+
+        if not messages:
+            raise ValueError(
+                "No messages found in state."
+            )
+
+        response = self.llm.invoke(
+            messages
+        )
+
+        return {
+            "messages": [response]
+        }

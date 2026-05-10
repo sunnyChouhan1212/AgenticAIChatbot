@@ -1,43 +1,18 @@
 # Monthly AI News Summary
 
-Here are the AI news articles summarized in markdown format:
-
-### 2025-06-07
-- Consumer watchdog directs ecommerce platforms to conduct self-audits to eliminate deceptive practices [https://yourstory.com/2025/06/consumer-watchdog-directs-ecommerce-platforms-to-conduct-self-audits](https://yourstory.com/2025/06/consumer-watchdog-directs-ecommerce-platforms-to-conduct-self-audits)
-
-### 2025-06-04
-- Meraqui: Building Bharat's Workforce OS with Tech, Trust, and Vision [https://yourstory.com/2025/06/meraqui-workforce-ai-platform-india](https://yourstory.com/2025/06/meraqui-workforce-ai-platform-india)
-- Easiofy Solutions: Pioneering AI-Driven Diagnostics in India's Heartland [https://yourstory.com/2025/06/easiofy-solutions-ai-driven-diagnostics-india](https://yourstory.com/2025/06/easiofy-solutions-ai-driven-diagnostics-india)
-- Why Looking Poor Is Important: The Psychology of Wealth in Disguise [https://yourstory.com/2025/06/why-looking-poor-is-important-psychology-of-wealth](https://yourstory.com/2025/06/why-looking-poor-is-important-psychology-of-wealth)
-- Quick commerce unicorn Zepto unlikely to go public in 2026 [https://yourstory.com/2025/06/zepto-quick-commerce-unicorn](https://yourstory.com/2025/06/zepto-quick-commerce-unicorn)
-- 7 Non-fiction books so bold they deserve a warning label [https://yourstory.com/2025/06/7-non-fiction-books-bold](https://yourstory.com/2025/06/7-non-fiction-books-bold)
-- Inside Myntra’s fashion playbook; Marico’s D2C gameplan [https://yourstory.com/2025/06/myntra-fashion-playbook-marico-d2c-gameplan](https://yourstory.com/2025/06/myntra-fashion-playbook-marico-d2c-gameplan)
-- Startup news and updates: daily roundup (June 3, 2025) [https://yourstory.com/2025/06/startup-news-updates-daily-roundup-june-3-2025](https://yourstory.com/2025/06/startup-news-updates-daily-roundup-june-3-2025)
-
-### 2025-05-30
-- Building India’s AI-Ready Workforce: The Launch of Mirai School of Technology [https://www.thehansindia.com/business/building-indias-ai-ready-workforce-the-launch-of-mirai-school-of-technology-975549](https://www.thehansindia.com/business/building-indias-ai-ready-workforce-the-launch-of-mirai-school-of-technology-975549)
-
-### 2025-05-25
-- Business Tech News: Google Rolls Out A Bunch Of AI Tech At It’s I/O Conference [https://www.forbes.com/sites/quickerbettertech/2025/05/25/business-tech-news-google-rolls-out-a-bunch-of-ai-tech-at-its-io-conference/](https://www.forbes.com/sites/quickerbettertech/2025/05/25/business-tech-news-google-rolls-out-a-bunch-of-ai-tech-at-its-io-conference/)
-
-### 2025-05-28
-- Next-gen AI pitchbook rival Finnish Inven grabs $12.75 for its first AI-native deal sourcing platform [https://techfundingnews.com/next-gen-ai-pitchbook-rival-finnish-inven-grabs-12-75-for-its-first-ai-native-deal-sourcing-platform/](https://techfundingnews.com/next-gen-ai-pitchbook-rival-finnish-inven-grabs-12-75-for-its-first-ai-native-deal-sourcing-platform/)
-
-### 2025-05-24
-- Expert warns just 20 cloud images can make an AI deepfake video of your child | Fox News [https://www.foxnews.com/tech/fox-news-ai-newsletter-expert-warns-just-20-cloud-images-can-make-ai-deepfake-video-your-child](https://www.foxnews.com/tech/fox-news-ai-newsletter-expert-warns-just-20-cloud-images-can-make-ai-deepfake-video-your-child)
-
-### 2025-05-18
-- Business Tech News: Klarna Reverses On AI, Says Customers Like Talking To People [https://www.forbes.com/sites/quickerbettertech/2025/05/18/business-tech-news-klarna-reverses-on-ai-says-customers-like-talking-to-people/](https://www.forbes.com/sites/quickerbettertech/2025/05/18/business-tech-news-klarna-reverses-on-ai-says-customers-like-talking-to-people/)
-- Teacher's tech tell-all goes viral Welcome to Fox News’ Artificial Intelligence newsletter with the latest AI technology advancements. [https://www.foxnews.com/tech/ai-newsletter-teachers-tech-tell-all-goes-viral](https://www.foxnews.com/tech/ai-newsletter-teachers-tech-tell-all-goes-viral)
-
-### 2025-05-11
-- Business Tech News: Microsoft Is Pushing The Business Benefits Of AI [https://www.forbes.com/sites/quickerbettertech/2025/05/11/business-tech-news-microsoft-is-pushing-the-business-benefits-of-ai/](https://www.forbes.com/sites/quickerbettertech/2025/05/11/business-tech-news-microsoft-is-pushing-the-business-benefits-of-ai/)
-
-### 2025-05-29
-- Grammarly secures $1 billion from General Catalyst to build AI productivity platform [https://www.reuters.com/business/grammarly-secures-1-billion-general-catalyst-build-ai-productivity-platform-2025-05-29](https://www.reuters.com/business/grammarly-secures-1-billion-general-catalyst-build-ai-productivity-platform-2025-05-29)
-
-### 2025-05-26
-- AI models can't tell time or read a calendar, study reveals | Live Science [https://www.livescience.com/technology/artificial-intelligence/ai-models-cant-tell-time-or-read-a-calendar-study-reveals](https://www.livescience.com/technology/artificial-intelligence/ai-models-cant-tell-time-or-read-a-calendar-study-reveals)
-
-### 2025-05-16
-- An AI (Artificial Intelligence) sign is seen at the World Artificial Intelligence Conference (WAIC) in Shanghai [https://www.reuters.com/business/grammarly-secures-1-billion-general-catalyst-build-ai-productivity-platform-2025-05-29](https://www.reuters.com/business/grammarly-secures-1-billion-general-catalyst-build-ai-productivity-platform-2025-05-29)
+### 09 May 2026
+- **Google Explores AI, Server, and Drone Manufacturing Investments in India** [https://www.analyticsinsight.net/news/google-explores-ai-server-and-drone-manufacturing-investments-in-india](https://www.analyticsinsight.net/news/google-explores-ai-server-and-drone-manufacturing-investments-in-india)
+### 08 May 2026
+- **Cybersecurity Firm Cloudflare to Cut 20% Workforce as AI Reshapes Operations** [https://www.fortuneindia.com/amp/story/business-news/cybersecurity-firm-cloudflare-to-cut-20-workforce-as-ai-reshapes-operations/136600](https://www.fortuneindia.com/amp/story/business-news/cybersecurity-firm-cloudflare-to-cut-20-workforce-as-ai-reshapes-operations/136600)
+### 01 May 2026
+- **AI Revolutionizing Agriculture and Cybersecurity in Odisha** [https://www.prameyanews.com/ai-revolutionizing-agriculture-and-cybersecurity-in-odisha](https://www.prameyanews.com/ai-revolutionizing-agriculture-and-cybersecurity-in-odisha)
+- **The AI Revolution Hollywood Feared Is Already Happening — In India** [https://tvnewscheck.com/ai/article/the-ai-revolution-hollywood-feared-is-already-happening-in-india/](https://tvnewscheck.com/ai/article/the-ai-revolution-hollywood-feared-is-already-happening-in-india/)
+### 04 May 2026
+- **Meet 3 Upcoming Monster Artificial Intelligence (AI) IPOs That Will Soon Join Meta, Tesla, and Broadcom in the $1 Trillion Club** [https://www.fool.com/investing/2026/05/04/meet-3-upcoming-monster-artificial-intelligence-ai/](https://www.fool.com/investing/2026/05/04/meet-3-upcoming-monster-artificial-intelligence-ai/)
+### 29 Apr 2026
+- **Scout AI Raises $100 Million for Military Models** [https://zamin.uz/en/technology/198427-scout-ai-raises-100-million-for-military-models.html](https://zamin.uz/en/technology/198427-scout-ai-raises-100-million-for-military-models.html)
+### 28 Apr 2026
+- **AI & Tech Brief: The “turning point” in the AI economy** [https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/04/28/ai-tech-brief-turning-point-ai-economy/](https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/04/28/ai-tech-brief-turning-point-ai-economy/)
+### 23 Apr 2026
+- **Apple to let users choose rival AI models across iOS 27 features** [https://www.itnews.com.au/resource/beyond-rag-basics-strategies-and-best-practices-for-implementing-rag-625632](https://www.itnews.com.au/resource/beyond-rag-basics-strategies-and-best-practices-for-implementing-rag-625632)
+- **Meta to start capturing employee mouse movements, keystrokes** [https://www.itnews.com.au/news/tal-prioritises-data-and-ai-with-largest-ever-technology-deal-625250](https://www.itnews.com.au/news/tal-prioritises-data-and-ai-with-largest-ever-technology-deal-625250)

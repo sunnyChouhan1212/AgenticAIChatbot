@@ -1,60 +1,246 @@
 import streamlit as st
-from langchain_core.messages import HumanMessage,AIMessage,ToolMessage
-import json
+
+from pathlib import Path
+
+from langchain_core.messages import (
+    HumanMessage,
+    AIMessage,
+    ToolMessage,
+)
 
 
 class DisplayResultStreamlit:
-    def __init__(self,usecase,graph,user_message):
-        self.usecase= usecase
+    """
+    Display LangGraph results
+    in Streamlit UI.
+    """
+
+    def __init__(
+        self,
+        usecase: str,
+        graph,
+        user_message: str,
+    ) -> None:
+
+        self.usecase = usecase
         self.graph = graph
         self.user_message = user_message
 
-    def display_result_on_ui(self):
-        usecase= self.usecase
-        graph = self.graph
-        user_message = self.user_message
-        print(user_message)
-        if usecase =="Basic Chatbot":
-                for event in graph.stream({'messages':("user",user_message)}):
-                    print(event.values())
-                    for value in event.values():
-                        print(value['messages'])
-                        with st.chat_message("user"):
-                            st.write(user_message)
-                        with st.chat_message("assistant"):
-                            st.write(value["messages"].content)
+    def display_result_on_ui(self) -> None:
+        """
+        Route rendering
+        based on selected use case.
+        """
 
-        elif usecase=="Chatbot With Web":
-             # Prepare state and invoke the graph
-            initial_state = {"messages": [user_message]}
-            res = graph.invoke(initial_state)
-            for message in res['messages']:
-                if type(message) == HumanMessage:
-                    with st.chat_message("user"):
-                        st.write(message.content)
-                elif type(message)==ToolMessage:
-                    with st.chat_message("ai"):
-                        st.write("Tool Call Start")
-                        st.write(message.content)
-                        st.write("Tool Call End")
-                elif type(message)==AIMessage and message.content:
-                    with st.chat_message("assistant"):
-                        st.write(message.content)
-                        
+        usecase_handlers = {
+            "Basic Chatbot":
+                self._display_basic_chatbot,
 
-        elif usecase == "AI News":
-            frequency = self.user_message
-            with st.spinner("Fetching and summarizing news... ⏳"):
-                result = graph.invoke({"messages": frequency})
-                try:
-                    # Read the markdown file
-                    AI_NEWS_PATH = f"./AINews/{frequency.lower()}_summary.md"
-                    with open(AI_NEWS_PATH, "r") as file:
-                        markdown_content = file.read()
+            "Chatbot With Web":
+                self._display_web_chatbot,
 
-                    # Display the markdown content in Streamlit
-                    st.markdown(markdown_content, unsafe_allow_html=True)
-                except FileNotFoundError:
-                    st.error(f"News Not Generated or File not found: {AI_NEWS_PATH}")
-                except Exception as e:
-                    st.error(f"An error occurred: {str(e)}")
+            "AI News":
+                self._display_ai_news,
+        }
+
+        handler = usecase_handlers.get(
+            self.usecase
+        )
+
+        if handler:
+            handler()
+        else:
+            st.error(
+                f"Unsupported use case: "
+                f"{self.usecase}"
+            )
+
+    def _display_basic_chatbot(self) -> None:
+        """
+        Display streaming chatbot response.
+        """
+
+        with st.chat_message("user"):
+            st.write(self.user_message)
+
+        try:
+
+            for event in self.graph.stream(
+                {
+                    "messages": [
+                        (
+                            "user",
+                            self.user_message,
+                        )
+                    ]
+                }
+            ):
+
+                for value in event.values():
+
+                    messages = value.get(
+                        "messages",
+                        [],
+                    )
+
+                    if messages:
+
+                        latest_message = (
+                            messages[-1]
+                        )
+
+                        if hasattr(
+                            latest_message,
+                            "content",
+                        ):
+
+                            with st.chat_message(
+                                "assistant"
+                            ):
+                                st.write(
+                                    latest_message.content
+                                )
+
+        except Exception as error:
+
+            st.error(
+                f"Error occurred: "
+                f"{str(error)}"
+            )
+
+    def _display_web_chatbot(self) -> None:
+        """
+        Display chatbot with
+        tool-calling support.
+        """
+
+        try:
+
+            initial_state = {
+                "messages": [
+                    HumanMessage(
+                        content=self.user_message
+                    )
+                ]
+            }
+
+            result = self.graph.invoke(
+                initial_state
+            )
+
+            for message in result.get(
+                "messages",
+                [],
+            ):
+
+                if isinstance(
+                    message,
+                    HumanMessage,
+                ):
+
+                    with st.chat_message(
+                        "user"
+                    ):
+                        st.write(
+                            message.content
+                        )
+
+                elif isinstance(
+                    message,
+                    ToolMessage,
+                ):
+
+                    with st.chat_message(
+                        "assistant"
+                    ):
+                        st.info(
+                            "🔧 Tool Call Started"
+                        )
+
+                        st.write(
+                            message.content
+                        )
+
+                        st.success(
+                            "✅ Tool Call Completed"
+                        )
+
+                elif (
+                    isinstance(
+                        message,
+                        AIMessage,
+                    )
+                    and message.content
+                ):
+
+                    with st.chat_message(
+                        "assistant"
+                    ):
+                        st.write(
+                            message.content
+                        )
+
+        except Exception as error:
+
+            st.error(
+                f"Error occurred: "
+                f"{str(error)}"
+            )
+
+    def _display_ai_news(self) -> None:
+        """
+        Display AI News summaries.
+        """
+
+        frequency = (
+            self.user_message
+        )
+
+        try:
+
+            with st.spinner(
+                "Fetching and summarizing "
+                "AI news... ⏳"
+            ):
+
+                self.graph.invoke(
+                    {
+                        "messages": [
+                            HumanMessage(
+                                content=frequency
+                            )
+                        ]
+                    }
+                )
+
+                news_path = Path(
+                    f"./AINews/"
+                    f"{frequency.lower()}_summary.md"
+                )
+
+                if not news_path.exists():
+
+                    st.error(
+                        f"News file not found: "
+                        f"{news_path}"
+                    )
+
+                    return
+
+                markdown_content = (
+                    news_path.read_text(
+                        encoding="utf-8"
+                    )
+                )
+
+                st.markdown(
+                    markdown_content,
+                    unsafe_allow_html=True,
+                )
+
+        except Exception as error:
+
+            st.error(
+                f"Error occurred: "
+                f"{str(error)}"
+            )

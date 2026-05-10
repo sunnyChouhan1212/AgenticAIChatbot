@@ -1,4 +1,15 @@
-from src.langgraphagenticai.main import load_langgraph_agenticai_app
+from src.langgraphagenticai.main import (
+    load_langgraph_agenticai_app,
+)
 
-if __name__=="__main__":
+
+def main() -> None:
+    """
+    Application entry point.
+    """
+
     load_langgraph_agenticai_app()
+
+
+if __name__ == "__main__":
+    main()

@@ -1,10 +1,17 @@
-from typing_extensions import TypedDict,List
+from typing import Annotated, List
+
+from typing_extensions import TypedDict
 from langgraph.graph.message import add_messages
-from typing import Annotated
+from langchain_core.messages import BaseMessage
 
 
 class State(TypedDict):
     """
-    Represent the structure of the state used in graph
+    Represents the shared state structure
+    used across the LangGraph workflow.
     """
-    messages: Annotated[List,add_messages]
+
+    messages: Annotated[
+        List[BaseMessage],
+        add_messages,
+    ]
