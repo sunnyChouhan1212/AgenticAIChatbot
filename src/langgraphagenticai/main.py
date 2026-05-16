@@ -57,8 +57,12 @@ def load_langgraph_agenticai_app() -> None:
             user_controls_input=user_controls
         )
 
+        # model = (
+        #     llm_config.get_llm_model()
+        # )
+
         model = (
-            llm_config.get_llm_model()
+            llm_config.get_llm_with_memory()
         )
 
         if not model:

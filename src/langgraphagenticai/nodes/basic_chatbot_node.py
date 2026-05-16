@@ -32,7 +32,12 @@ class BasicChatbotNode:
             )
 
         response = self.llm.invoke(
-            messages
+            messages,
+            config={
+                "configurable": {
+                    "session_id": "streamlit_user"
+                }
+            },
         )
 
         return {
